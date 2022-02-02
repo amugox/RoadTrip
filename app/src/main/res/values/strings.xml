@@ -3,6 +3,10 @@
     <string name="app_desc">Exploring the world with more fun</string>
     <string name="app_id">co.ke.jamboapps.roadtrip</string>
 
+    <string name="info_location">RoadTrip location service running.</string>
+
+    <string name="action_turn_off">TURN OFF</string>
+
     <!-- Buttons -->
     <string name="btn_no">No</string>
     <string name="btn_ok">OK</string>
@@ -39,4 +43,7 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_home">Home</string>
+    <string name="title_activity_create_trip">Create Trip</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
