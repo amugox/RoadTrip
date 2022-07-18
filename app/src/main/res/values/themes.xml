@@ -64,10 +64,20 @@
     </style>
 
     <!-- Custom Button -->
-    <style name="Widget.Button.EazPrint" parent="Widget.MaterialComponents.Button">
+    <style name="Widget.Button.RoadTrip" parent="Widget.MaterialComponents.Button">
         <item name="android:background">@drawable/button_bg</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:minHeight">40dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginLeft">2dp</item>
+        <item name="android:layout_marginRight">2dp</item>
+        <item name="android:fontFamily">@font/app_font</item>
+    </style>
+
+    <style name="btn" parent="@style/Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/button_bg</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:minHeight">45dp</item>
         <item name="android:textSize">14sp</item>
         <item name="android:layout_marginLeft">2dp</item>
         <item name="android:layout_marginRight">2dp</item>

@@ -68,6 +68,7 @@ class RoadMapActivity : AppCompatActivity(), OnMapReadyCallback, SensorEventList
         mFusedLocationClient!!.lastLocation.addOnSuccessListener { loc: Location? ->
             run {
                 mCurrentLocation = LatLng(loc!!.latitude, loc.longitude)
+                updateMyLocation()
             }
         }
 
@@ -198,7 +199,6 @@ class RoadMapActivity : AppCompatActivity(), OnMapReadyCallback, SensorEventList
                         .position(mCurrentLocation!!)
                         .icon(BitmapDescriptorFactory.fromBitmap(myLocIcon!!))
                         .title("My Location")
-                        .flat(true)
                 )
             } else {
                 mCurrLocMarker!!.position = mCurrentLocation!!
@@ -207,7 +207,6 @@ class RoadMapActivity : AppCompatActivity(), OnMapReadyCallback, SensorEventList
             val cameraPosition = CameraPosition.Builder()
                 .target(mCurrentLocation!!) // Sets the center of the map to Mountain View
                 .zoom(16f) // Sets the zoom
-                .tilt(45f) // Sets the tilt of the camera to 30 degrees
                 .build()
 
             mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition))

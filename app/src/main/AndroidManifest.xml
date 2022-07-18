@@ -15,11 +15,36 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RoadTrip">
+        <activity
+            android:name=".MarkRouteActivity"
+            android:exported="false"
+            android:label="@string/title_activity_mark_route"
+            android:theme="@style/Theme.RoadTrip.NoActionBar" />
+        <activity
+            android:name=".RouteActivity"
+            android:exported="false"
+            android:label="@string/title_activity_route"
+            android:theme="@style/Theme.RoadTrip.NoActionBar" />
+        <activity
+            android:name=".GetRouteActivity"
+            android:exported="false"
+            android:label="@string/title_activity_get_route"
+            android:theme="@style/Theme.RoadTrip.NoActionBar" />
+        <activity
+            android:name=".CreateRouteActivity"
+            android:exported="false"
+            android:label="@string/title_activity_create_route"
+            android:theme="@style/Theme.RoadTrip.NoActionBar" />
+        <activity
+            android:name=".RoadMarkActivity"
+            android:exported="false"
+            android:label="@string/title_activity_road_mark"
+            android:theme="@style/Theme.RoadTrip.NoActionBar" />
 
         <receiver
             android:name=".receiver.MyBroadcastReceiver"
             android:enabled="true"
-            android:exported="false"/>
+            android:exported="false" />
 
         <service
             android:name=".service.MyLocationService"
@@ -59,6 +84,16 @@
             android:name=".RoadMapActivity"
             android:exported="false"
             android:label="@string/title_activity_road_map" />
+
+        <service
+            android:name=".service.MyFirebaseService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

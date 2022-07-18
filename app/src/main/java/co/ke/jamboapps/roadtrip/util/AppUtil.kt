@@ -13,6 +13,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import co.ke.jamboapps.roadtrip.R
 import co.ke.jamboapps.roadtrip.app.App
 import co.ke.jamboapps.roadtrip.app.AppConfig
+import co.ke.jamboapps.roadtrip.clazz.HttpReqActions
 
 class AppUtil {
     companion object {
@@ -48,8 +49,18 @@ class AppUtil {
             return isConnected
         }
 
-        fun getServerUrl(urlType: Int): String {
-            return ""
+        fun getServerUrl(actionType: Int): String {
+            val ctx: Context = App.getAppInstance().applicationContext
+            val baseUrl = ctx.getString(R.string.server_base_url)
+            val endpoint = when (actionType) {
+                HttpReqActions.ACCOUNT_CREATE,
+                HttpReqActions.ACCOUNT_REGISTER ->
+                    ctx.getString(R.string.account_operation_ep)
+                HttpReqActions.ROUTE_CREATE ->
+                    ctx.getString(R.string.route_operation_ep)
+                else -> ""
+            }
+            return String.format("%s/%s", baseUrl, endpoint)
         }
 
         fun showToast(context: Context, message: String) {

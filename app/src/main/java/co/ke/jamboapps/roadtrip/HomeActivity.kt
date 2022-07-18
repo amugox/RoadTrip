@@ -1,18 +1,11 @@
 package co.ke.jamboapps.roadtrip
 
-import android.Manifest
-import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Bundle
 import android.widget.FrameLayout
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import co.ke.jamboapps.roadtrip.fragment.AlertsFragment
 import co.ke.jamboapps.roadtrip.fragment.HomeFragment
-import co.ke.jamboapps.roadtrip.service.MyLocationService
+import co.ke.jamboapps.roadtrip.fragment.MyRoutesFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeActivity : BaseActivity() {
@@ -41,10 +34,10 @@ class HomeActivity : BaseActivity() {
                     fragment = HomeFragment()
                 }
                 R.id.nav_trips -> {
-                    fragment = HomeFragment()
+                    fragment = MyRoutesFragment()
                 }
-                R.id.nav_settings -> {
-                    fragment = HomeFragment()
+                R.id.nav_alerts -> {
+                    fragment = AlertsFragment()
                 }
             }
 

@@ -4,6 +4,9 @@ import android.app.Application
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.Volley
+import com.dbflow5.config.FlowManager
+import com.mikepenz.iconics.Iconics
+import com.mikepenz.iconics.typeface.library.fontawesome.FontAwesome
 
 class App: Application() {
     val TAG = App::class.java.simpleName
@@ -19,16 +22,18 @@ class App: Application() {
         fun getAppInstance(): App {
             return mInstance as App
         }
-
-
     }
 
     override fun onCreate() {
         super.onCreate()
+        FlowManager.init(this)
+        Iconics.init(this)
+        Iconics.registerFont(FontAwesome)
     }
 
     override fun onTerminate() {
         super.onTerminate()
+        FlowManager.destroy()
     }
 
     fun getRequestQueue(): RequestQueue? {

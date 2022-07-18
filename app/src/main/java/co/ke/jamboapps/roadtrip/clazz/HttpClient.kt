@@ -6,6 +6,7 @@ import android.util.Log
 import co.ke.jamboapps.roadtrip.R
 import co.ke.jamboapps.roadtrip.app.App
 import co.ke.jamboapps.roadtrip.app.AppConfig
+import co.ke.jamboapps.roadtrip.db.User
 import co.ke.jamboapps.roadtrip.dialog.Alerts
 import co.ke.jamboapps.roadtrip.util.AppUtil
 import com.android.volley.*
@@ -36,7 +37,6 @@ class HttpClient(activity: Activity? = null) {
     private var myActivity: Activity? = null
 
     init {
-        //context = activity?.applicationContext
         myActivity = activity
     }
 
@@ -80,76 +80,23 @@ class HttpClient(activity: Activity? = null) {
             val finalData = JSONObject()
             finalData.put("tsp", timestamp)
             finalData.put("act", action.toString())
+            finalData.put("ver", "1")
+            finalData.put("data", postData)
 
-            when (action) {
-                REQUEST_ACTIONS.CLIENT_MOBILE_APP_CONFIG -> {
-                    finalData.put("content", postData)
-                    finalData.put("tkn", "")
-                }
-                else -> {
-//                    val user = App.getAppUser()
-//                    val devId = ""//user.deviceId
-//                    val keys = CryptoUtil.generateAESKeyIV()
-//
-//                    val key = keys[0] ?: ""
-//                    val iv = keys[1] ?: ""
-//
-//                    val encDta = CryptoUtil.encryptData(postData.toString(), key, iv, devId)
-//                    val dataKey = CryptoUtil.encryptDataKey(key, iv, user.publicKey)
-//
-//                    finalData.put("content", encDta)
-//                    finalData.put("tkn", dataKey)
-                }
+            var userCode = 0
+            val user = User.get()
+            if (user != null) {
+                userCode = user.userCode
             }
+            finalData.put("ucode", "$userCode")
 
             Log.e("HTTP REQ: >>>", "$finalData at :$url")
             val jsonObjReq = object : JsonObjectRequest(method, url, finalData,
                 Response.Listener { response ->
-                    Log.e("JSON", response.toString())
+                    Log.e("RESP", response.toString())
                     try {
                         //------ Process response
-                        //1. Get data format
-                        val dataFormat = response.getInt("cft")
-
-                        var respData: JSONObject? = null
-                        //2. Process data
-                        if (dataFormat == 0) {
-                            //3. Data not encrypted, get the response data
-                            respData = response.getJSONObject("content");
-                        } else {
-//                            //3. Data encrypted, get data and decrypt
-//                            val data = response.getString("content")
-//
-//                            //4. Get key
-//                            val key = response.getString("tkn")
-//
-//                            //5. Decrypt the key
-//                            val user = App.getAppUser()
-//                            val decKey = CryptoUtil.decryptDataKey(key, user.privateKey)
-//                            if (decKey.isNullOrEmpty()) {
-//                                listener?.onError(
-//                                    HttpError(
-//                                        11,
-//                                        App.getAppInstance().applicationContext.getString(R.string.err_data_security_failed),
-//                                        Exception()
-//                                    )
-//                                )
-//                                return@Listener
-//                            } else {
-////                                //6. Extract key information
-////                                val keyObj = JSONObject(decKey)
-////                                val myKey = keyObj.getString("key")
-////                                val myIV = keyObj.getString("iv")
-////
-////                                //7. Decrypt data
-////                                val decData = CryptoUtil.decryptData(data, myKey, myIV)
-////
-////                                //8. Create event response data
-////                                respData = JSONObject(decData)
-//                            }
-                        }
-                        respData?.let { listener?.onSuccess(it) }
-
+                        response?.let { listener?.onSuccess(it) }
                     } catch (e: JSONException) {
                         val httpErr = HttpError(
                             10,

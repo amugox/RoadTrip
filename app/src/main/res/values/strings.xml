@@ -1,11 +1,16 @@
 <resources>
-    <string name="app_name">RoadTrip</string>
-    <string name="app_desc">Exploring the world with more fun</string>
+    <string name="app_name">Route-A</string>
+    <string name="app_desc">Your assistant to your destination</string>
     <string name="app_id">co.ke.jamboapps.roadtrip</string>
 
-    <string name="info_location">RoadTrip location service running.</string>
+    <string name="info_location">Route-A location service running.</string>
 
+    <!-- Menu -->
     <string name="action_turn_off">TURN OFF</string>
+    <string name="action_home">Home</string>
+    <string name="action_my_routes">My Routes</string>
+    <string name="action_alerts">Alerts</string>
+    <string name="action_delete">Delete</string>
 
     <!-- Buttons -->
     <string name="btn_no">No</string>
@@ -15,35 +20,58 @@
     <string name="btn_next_icon">Next {faw-arrow-right}</string>
     <string name="btn_cancel">Cancel</string>
     <string name="btn_cancel_icon">{faw-times} Cancel</string>
+    <string name="btn_submit">Submit</string>
 
     <!-- TextView -->
     <string name="tv_version">Version %s</string>
     <string name="tv_please_wait">Please wait .....</string>
+    <string name="tv_list_empty">Empty list!</string>
+    <string name="tv_empty_list">No record found!</string>
+    <string name="tv_latest_routes">Latest routes:</string>
+    <string name="tv_welcome_back">Welcome back</string>
+    <string name="tv_route_desc_prompt">Enter the route description</string>
+    <string name="tv_route_name_prompt">Enter the route name</string>
+    <string name="tv_route_options">Route options:</string>
+    <string name="tv_route_name">Route Name:</string>
+    <string name="tv_details">Details:</string>
+    <string name="tv_extra_details">Extra Details:</string>
+    <string name="tv_route_id">Route Id:</string>
+    <string name="tv_route_extras">Created on %s by %s</string>
+
+
+    <!-- Hints -->
+    <string name="ht_route_name">Route name</string>
+    <string name="ht_description">Description</string>
 
     <!-- Error messages -->
-    <string name="err_data_security_failed">Device data security failed! Contact the bank admin.</string>
     <string name="err_req_failed">Request was NOT initiated due to an error!</string>
     <string name="err_req_timeout">Service currently unavailable, try again later</string>
     <string name="err_auth_failed">Request failed due to authorization failure!</string>
     <string name="err_http_request_failed">Request returned an error! try again later</string>
     <string name="err_processing_http_response">Failed to processing response data!</string>
+    <string name="err_empty_input">Data input cannot be blank!</string>
 
     <!-- Dialogs -->
     <string name="dg_no_conn_text">No Internet! Enable mobile data or connect to a WiFi to proceed.</string>
     <string name="dg_confirm_logout_text">Are you sure you want to logout from the application?</string>
 
-    <string name="title_activity_road_map">Map</string>
-    <string name="title_activity_my_trips">My Trips</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="title_activity_road_map">Map</string>
+    <string name="title_activity_my_trips">My Trips</string>
     <string name="title_activity_home">Home</string>
     <string name="title_activity_create_trip">Create Trip</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_road_mark">Road Mark</string>
+    <string name="title_activity_create_route">Create Route</string>
+    <string name="title_activity_get_route">Get Route</string>
+    <string name="title_activity_route">My Route</string>
+    <string name="title_activity_mark_route">Mark Route</string>
+
 </resources>

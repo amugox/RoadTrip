@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="server_base_url">https://dff9-105-161-110-161.ngrok.io/api/v1</string>
+    <string name="account_operation_ep">account/operation</string>
+    <string name="route_operation_ep">route/operation</string>
+</resources>

@@ -3,8 +3,31 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Projects/Android/RoadTrip/app/src/main/res/drawable/edit_text_bg.xml" value="0.1345" />
+        <entry key="..\:/Projects/Android/RoadTrip/app/src/main/res/drawable/ic_checklist.xml" value="0.1345" />
+        <entry key="..\:/Projects/Android/RoadTrip/app/src/main/res/drawable/progress_bg.xml" value="0.1345" />
+        <entry key="..\:/Projects/Android/RoadTrip/app/src/main/res/drawable/progress_dialog_bg.xml" value="0.1345" />
+        <entry key="..\:/Projects/Android/RoadTrip/app/src/main/res/drawable/user_panel_bg.xml" value="0.1345" />
+        <entry key="..\:/Projects/Android/RoadTrip/app/src/main/res/layout/activity_create_route.xml" value="0.18961625282167044" />
+        <entry key="..\:/Projects/Android/RoadTrip/app/src/main/res/layout/activity_get_route.xml" value="0.18961625282167044" />
+        <entry key="..\:/Projects/Android/RoadTrip/app/src/main/res/layout/activity_home.xml" value="0.10099637681159421" />
+        <entry key="..\:/Projects/Android/RoadTrip/app/src/main/res/layout/activity_mark_route.xml" value="0.175" />
+        <entry key="..\:/Projects/Android/RoadTrip/app/src/main/res/layout/activity_road_map.xml" value="0.11322463768115942" />
+        <entry key="..\:/Projects/Android/RoadTrip/app/src/main/res/layout/activity_road_mark.xml" value="0.175" />
+        <entry key="..\:/Projects/Android/RoadTrip/app/src/main/res/layout/activity_start.xml" value="0.11322463768115942" />
+        <entry key="..\:/Projects/Android/RoadTrip/app/src/main/res/layout/content_create_route.xml" value="0.10099637681159421" />
+        <entry key="..\:/Projects/Android/RoadTrip/app/src/main/res/layout/content_get_route.xml" value="0.1" />
         <entry key="..\:/Projects/Android/RoadTrip/app/src/main/res/layout/content_home.xml" value="0.11322463768115942" />
+        <entry key="..\:/Projects/Android/RoadTrip/app/src/main/res/layout/content_mark_route.xml" value="0.175" />
+        <entry key="..\:/Projects/Android/RoadTrip/app/src/main/res/layout/content_road_mark.xml" value="0.1" />
+        <entry key="..\:/Projects/Android/RoadTrip/app/src/main/res/layout/content_route.xml" value="0.1" />
         <entry key="..\:/Projects/Android/RoadTrip/app/src/main/res/layout/fragment_home.xml" value="0.11322463768115942" />
+        <entry key="..\:/Projects/Android/RoadTrip/app/src/main/res/layout/fragment_mark_route.xml" value="0.175" />
+        <entry key="..\:/Projects/Android/RoadTrip/app/src/main/res/layout/menu_item_view.xml" value="0.17395833333333333" />
+        <entry key="..\:/Projects/Android/RoadTrip/app/src/main/res/layout/progressdialog_view.xml" value="0.175" />
+        <entry key="..\:/Projects/Android/RoadTrip/app/src/main/res/layout/route_list_item_view.xml" value="0.17395833333333333" />
+        <entry key="..\:/Projects/Android/RoadTrip/app/src/main/res/menu/bottom_nav_menu.xml" value="0.175" />
+        <entry key="..\:/Projects/Android/RoadTrip/app/src/main/res/menu/route_menu.xml" value="0.175" />
       </map>
     </option>
   </component>

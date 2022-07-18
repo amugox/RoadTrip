@@ -47,10 +47,10 @@ class MyLocationService : Service() {
 
             //--- Broadcast location
             val intent = Intent(AppConfig.LOCATION_UPDATE)
-            intent.putExtra("lat", currentLocation.latitude)
-            intent.putExtra("lng", currentLocation.longitude)
-            intent.putExtra("brn", currentLocation.bearing)
-            intent.putExtra("alt", currentLocation.altitude)
+            intent.putExtra("lat", currentLocation?.latitude)
+            intent.putExtra("lng", currentLocation?.longitude)
+            intent.putExtra("brn", currentLocation?.bearing)
+            intent.putExtra("alt", currentLocation?.altitude)
             sendBroadcast(intent)
         }
     }
