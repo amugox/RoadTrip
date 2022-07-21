@@ -5,6 +5,7 @@ import com.dbflow5.annotation.PrimaryKey
 import com.dbflow5.annotation.Table
 import com.dbflow5.query.select
 import com.dbflow5.structure.save
+import com.dbflow5.structure.update
 import java.util.*
 
 @Table(database = AppDb::class)
@@ -29,10 +30,20 @@ class MyRoute(
 
     @Column
     var createdOn: Date? = null,
+
+    @Column
+    var markStat: Int = 0,
 ) {
     fun save() {
         this.save(AppDb.getDb())
     }
+
+    fun update() {
+        this.update(AppDb.getDb())
+    }
+
+    override fun toString(): String =
+        "Code:$code, Title:$routeName, Details:$details, Mark Status:$markStat"
 
     companion object {
 

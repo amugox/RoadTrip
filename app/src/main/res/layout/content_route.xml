@@ -79,7 +79,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:fontFamily="@font/app_bold_font"
+            android:textSize="16sp"
+            android:fontFamily="@font/app_font"
             android:text="@string/tv_route_options" />
 
         <androidx.recyclerview.widget.RecyclerView

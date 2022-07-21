@@ -4,6 +4,8 @@
     <string name="app_id">co.ke.jamboapps.roadtrip</string>
 
     <string name="info_location">Route-A location service running.</string>
+    <string name="info_auto_mark_service">Route-A automatic route marking service running.</string>
+    <string name="info_service_stopped">Service has been stopped!</string>
 
     <!-- Menu -->
     <string name="action_turn_off">TURN OFF</string>
@@ -11,6 +13,9 @@
     <string name="action_my_routes">My Routes</string>
     <string name="action_alerts">Alerts</string>
     <string name="action_delete">Delete</string>
+    <string name="action_stop">STOP</string>
+    <string name="action_end">END</string>
+    <string name="action_cancel">CANCEL</string>
 
     <!-- Buttons -->
     <string name="btn_no">No</string>
@@ -21,6 +26,8 @@
     <string name="btn_cancel">Cancel</string>
     <string name="btn_cancel_icon">{faw-times} Cancel</string>
     <string name="btn_submit">Submit</string>
+    <string name="btn_start">Start</string>
+    <string name="btn_end">End</string>
 
     <!-- TextView -->
     <string name="tv_version">Version %s</string>
@@ -37,6 +44,13 @@
     <string name="tv_extra_details">Extra Details:</string>
     <string name="tv_route_id">Route Id:</string>
     <string name="tv_route_extras">Created on %s by %s</string>
+    <string name="tv_auto_route_mark_header">
+        Automatically mark the route as you drive, the application will get location in given intervals and mark the locations as route points. <br />
+        Press on the START button to start marking.
+    </string>
+    <string name="tv_power_warning">Make sure the device has sufficient power!</string>
+    <string name="tv_confirm_add_mark_header">Confirm you want to add this mark.</string>
+    <string name="tv_manual_mark_header">Mark route points manually with the help of route assist.</string>
 
 
     <!-- Hints -->
@@ -50,10 +64,13 @@
     <string name="err_http_request_failed">Request returned an error! try again later</string>
     <string name="err_processing_http_response">Failed to processing response data!</string>
     <string name="err_empty_input">Data input cannot be blank!</string>
+    <string name="err_permission_denied">Permissions requested was NOT granted!</string>
 
     <!-- Dialogs -->
     <string name="dg_no_conn_text">No Internet! Enable mobile data or connect to a WiFi to proceed.</string>
     <string name="dg_confirm_logout_text">Are you sure you want to logout from the application?</string>
+    <string name="dg_confirm_end_route_mark">Are you sure you want to END route marking?</string>
+    <string name="dg_confirm_cancel_route_mark">Are you sure you want to CANCEL route marking?</string>
 
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -73,5 +90,6 @@
     <string name="title_activity_get_route">Get Route</string>
     <string name="title_activity_route">My Route</string>
     <string name="title_activity_mark_route">Mark Route</string>
+    <string name="title_activity_review_route">Review Route</string>
 
 </resources>

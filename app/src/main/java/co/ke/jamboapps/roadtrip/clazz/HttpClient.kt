@@ -156,7 +156,7 @@ class HttpClient(activity: Activity? = null) {
     }
 
     private fun showNoConnDialog() {
-        myActivity?.let { Alerts().showWarningMessage(it, R.string.dg_no_conn_text) }
+        myActivity?.let { Alerts.showWarningMessage(it, R.string.dg_no_conn_text) }
     }
 
     private fun getTimeStamp(): String {

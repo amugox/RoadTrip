@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import co.ke.jamboapps.roadtrip.util.AppUtil
 
-open class BaseActivity: AppCompatActivity() {
+open class BaseActivity : AppCompatActivity() {
 
     fun setupHomeButton() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
@@ -30,10 +30,27 @@ open class BaseActivity: AppCompatActivity() {
         transaction.commitAllowingStateLoss()
     }
 
+    fun changeFragment(idRes: Int, fragment: Fragment) {
+        Log.d("CLICK >>>", "Changing fragment......")
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(idRes, fragment)
+        transaction.addToBackStack(null)
+        transaction.commitAllowingStateLoss()
+    }
+
     fun changeFragment(fragment: Fragment, addToBackStack: Boolean) {
         Log.d("CLICK >>>", "Changing fragment......")
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment, fragment)
+        if (addToBackStack)
+            transaction.addToBackStack(null)
+        transaction.commitAllowingStateLoss()
+    }
+
+    fun changeFragment(idRes: Int, fragment: Fragment, addToBackStack: Boolean) {
+        Log.d("CLICK >>>", "Changing fragment......")
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(idRes, fragment)
         if (addToBackStack)
             transaction.addToBackStack(null)
         transaction.commitAllowingStateLoss()

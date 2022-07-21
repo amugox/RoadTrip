@@ -6,6 +6,7 @@ import com.android.volley.RequestQueue
 import com.android.volley.toolbox.Volley
 import com.dbflow5.config.FlowManager
 import com.mikepenz.iconics.Iconics
+import com.mikepenz.iconics.typeface.library.community.material.CommunityMaterial
 import com.mikepenz.iconics.typeface.library.fontawesome.FontAwesome
 
 class App: Application() {
@@ -29,6 +30,7 @@ class App: Application() {
         FlowManager.init(this)
         Iconics.init(this)
         Iconics.registerFont(FontAwesome)
+        Iconics.registerFont(CommunityMaterial)
     }
 
     override fun onTerminate() {

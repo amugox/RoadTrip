@@ -8,4 +8,5 @@ data class MenuItem(
     var details: String = "",
     var iconRes: Int = 0,
     var icon: IIcon? = null,
+    var status: ItemStat? = null,
 )

@@ -56,7 +56,8 @@ class AppUtil {
                 HttpReqActions.ACCOUNT_CREATE,
                 HttpReqActions.ACCOUNT_REGISTER ->
                     ctx.getString(R.string.account_operation_ep)
-                HttpReqActions.ROUTE_CREATE ->
+                HttpReqActions.ROUTE_CREATE,
+                HttpReqActions.ROUTE_CREATE_MARKS ->
                     ctx.getString(R.string.route_operation_ep)
                 else -> ""
             }

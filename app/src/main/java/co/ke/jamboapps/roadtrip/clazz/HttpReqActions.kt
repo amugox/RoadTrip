@@ -6,5 +6,6 @@ class HttpReqActions {
         const val ACCOUNT_REGISTER: Int = 101
 
         const val ROUTE_CREATE: Int = 200
+        const val ROUTE_CREATE_MARKS: Int = 201
     }
 }

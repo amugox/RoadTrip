@@ -10,21 +10,22 @@ import androidx.recyclerview.widget.RecyclerView
 import co.ke.jamboapps.roadtrip.R
 import co.ke.jamboapps.roadtrip.listener.ListItemClickListener
 import co.ke.jamboapps.roadtrip.model.MenuItem
+import co.ke.jamboapps.roadtrip.model.StatusType
 import com.mikepenz.iconics.IconicsDrawable
-import com.mikepenz.iconics.typeface.library.fontawesome.FontAwesome
 import com.mikepenz.iconics.utils.sizeDp
 
 class MenuAdapter(
     private val data: MutableList<MenuItem>,
-    private val listener: ListItemClickListener
+    private val listener: ListItemClickListener,
+    private val menuType: Int = 0
 ) : RecyclerView.Adapter<MenuAdapter.ViewHolder>() {
     private var mContext: Context? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         mContext = parent.context
 
-        val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.menu_item_view, parent, false)
+        val layoutRes = if (menuType == 0) R.layout.menu_item_view else R.layout.menu_item_view_2
+        val itemView = LayoutInflater.from(parent.context).inflate(layoutRes, parent, false)
 
         return ViewHolder(itemView)
     }
@@ -45,13 +46,24 @@ class MenuAdapter(
                 }
 
                 if (item.iconRes != 0) {
-                    findViewById<ImageView>(R.id.icon).setBackgroundResource(item.iconRes)
+                    findViewById<ImageView>(R.id.ivIcon).setImageResource(item.iconRes)
                 }
                 if (item.icon != null) {
                     val myIcon = IconicsDrawable(ctx, item.icon!!).apply {
                         sizeDp = 40
                     }
-                    findViewById<ImageView>(R.id.icon).setImageDrawable(myIcon)
+                    findViewById<ImageView>(R.id.ivIcon).setImageDrawable(myIcon)
+                }
+
+                if (item.status != null) {
+                    findViewById<TextView>(R.id.tvStatus).visibility = View.VISIBLE
+                    findViewById<TextView>(R.id.tvStatus).text = item.status!!.title
+                    val bgRes = when (item.status!!.status) {
+                        StatusType.SUCCESS -> R.drawable.stat_success_bg
+                        StatusType.WARNING -> R.drawable.stat_warning_bg
+                        else -> R.drawable.stat_danger_bg
+                    }
+                    findViewById<TextView>(R.id.tvStatus).setBackgroundResource(bgRes)
                 }
 
                 setOnClickListener { v ->

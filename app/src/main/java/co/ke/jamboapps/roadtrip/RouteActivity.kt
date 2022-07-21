@@ -2,6 +2,7 @@ package co.ke.jamboapps.roadtrip
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.View
 import com.google.android.material.snackbar.Snackbar
@@ -16,6 +17,7 @@ import co.ke.jamboapps.roadtrip.adapter.MenuAdapter
 import co.ke.jamboapps.roadtrip.adapter.RouteAdapter
 import co.ke.jamboapps.roadtrip.databinding.ActivityRouteBinding
 import co.ke.jamboapps.roadtrip.db.MyRoute
+import co.ke.jamboapps.roadtrip.db.RouteMark
 import co.ke.jamboapps.roadtrip.listener.ListItemClickListener
 import co.ke.jamboapps.roadtrip.model.MenuItem
 import com.mikepenz.iconics.typeface.library.fontawesome.FontAwesome
@@ -44,7 +46,7 @@ class RouteActivity : BaseActivity() {
 
     private fun loadData(code: Int) {
         val route = MyRoute.get(code) ?: return
-
+        Log.e("Route", route.toString())
         //---- Create layout manager
         val mLayoutManager = LinearLayoutManager(this)
 
@@ -62,16 +64,27 @@ class RouteActivity : BaseActivity() {
             rvMenus.itemAnimator = DefaultItemAnimator()
 
             val menus = mutableListOf<MenuItem>()
-            if (route.myRoute == 1)
-                menus.add(
-                    MenuItem(
-                        title = "Mark Route",
-                        icon = FontAwesome.Icon.faw_map_marked,
-                        code = 1
+            if (route.myRoute == 1) {
+                if (route.markStat == 0 || route.markStat == 1) {
+                    menus.add(
+                        MenuItem(
+                            title = "Mark Route",
+                            iconRes = R.drawable.ic_mark_route,
+                            code = 1
+                        )
                     )
-                )
-            menus.add(MenuItem(title = "Navigate", icon = FontAwesome.Icon.faw_route, code = 2))
-            menus.add(MenuItem(title = "Share", icon = FontAwesome.Icon.faw_share_alt, code = 3))
+                } else if (route.markStat == 2) {
+                    menus.add(
+                        MenuItem(
+                            title = "Review Route",
+                            iconRes = R.drawable.ic_map,
+                            code = 2
+                        )
+                    )
+                }
+            }
+            menus.add(MenuItem(title = "Navigate", icon = FontAwesome.Icon.faw_route, code = 3))
+            menus.add(MenuItem(title = "Share", icon = FontAwesome.Icon.faw_share_alt, code = 4))
 
             val adapter = MenuAdapter(menus, object : ListItemClickListener {
                 override fun onItemClick(v: View, position: Int, isLong: Boolean) {
@@ -79,8 +92,8 @@ class RouteActivity : BaseActivity() {
                         1 -> Intent(applicationContext, MarkRouteActivity::class.java).apply {
                             putExtra("rt_code", route.code)
                         }
-                        2 -> {
-                            null
+                        2 -> Intent(applicationContext, ReviewRouteActivity::class.java).apply {
+                            putExtra("rt_code", route.code)
                         }
                         3 -> {
                             null
@@ -93,6 +106,12 @@ class RouteActivity : BaseActivity() {
             })
 
             rvMenus.adapter = adapter
+        }
+
+        val marks = RouteMark.getByRoute(code)
+        Log.e("Marks", "${marks.size}")
+        marks.forEach { m ->
+            Log.e("Mark", "Id:${m.id}, Type: ${m.type}")
         }
     }
 }

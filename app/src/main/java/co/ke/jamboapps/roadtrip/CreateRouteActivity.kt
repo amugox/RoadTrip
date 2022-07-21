@@ -75,14 +75,14 @@ class CreateRouteActivity : BaseActivity() {
                         setResult(RESULT_OK)
                         finish()
                     } else {
-                        Alerts().showWarningMessage(
+                        Alerts.showWarningMessage(
                             this@CreateRouteActivity,
                             response.getString("msg")
                         )
                     }
                 } catch (e: JSONException) {
                     e.printStackTrace()
-                    Alerts().showWarningMessage(
+                    Alerts.showWarningMessage(
                         this@CreateRouteActivity,
                         R.string.err_processing_http_response
                     )
@@ -92,7 +92,7 @@ class CreateRouteActivity : BaseActivity() {
             override fun onError(error: HttpClient.HttpError) {
                 wd?.dismiss()
                 error.exception.printStackTrace()
-                Alerts().showWarningMessage(this@CreateRouteActivity, error.message)
+                Alerts.showWarningMessage(this@CreateRouteActivity, error.message)
             }
 
             override fun onNoConnection() {

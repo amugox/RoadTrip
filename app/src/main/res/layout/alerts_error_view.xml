@@ -1,53 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:gravity="center"
-              android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
 
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorError"
-            android:gravity="center"
-            android:padding="8dp">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorError"
+        android:gravity="center"
+        android:padding="8dp">
 
         <com.mikepenz.iconics.view.IconicsImageView
-                android:id="@+id/alert_image"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                app:iiv_color="@color/colorWhite"
-                app:iiv_icon="faw-exclamation-triangle"/>
+            android:id="@+id/alert_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:iiv_color="@color/colorWhite"
+            app:iiv_icon="faw-exclamation-triangle" />
 
     </LinearLayout>
 
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:paddingBottom="10dp">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp">
 
         <TextView
-                android:id="@+id/alert_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/app_font"
-                android:gravity="center"
-                android:text="Dialog message"
-                android:textSize="15sp"/>
+            android:id="@+id/alert_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/app_font"
+            android:gravity="center"
+            android:textSize="15sp" />
 
         <Button
-                android:id="@+id/alert_button"
-                style="@style/btn_alert"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/btn_ok"/>
+            android:id="@+id/alert_button"
+            style="@style/btn_alert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/btn_ok" />
 
     </LinearLayout>
 
